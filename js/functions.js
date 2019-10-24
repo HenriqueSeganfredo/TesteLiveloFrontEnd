@@ -1,9 +1,19 @@
 var url_base = "https://api.github.com/users/";
 var url;
-var input
 
-function search() {
-  input = document.getElementById('user-input').value;
+$( document ).ready(function() {
+  var sPageURL = window.location.search.substring(1);
+  if(sPageURL != ""){
+    search(sPageURL);
+  }
+});
+
+function setSearchParam(){
+  var input = document.getElementById('user-input').value;
+  search(input);
+}
+
+function search(input) {
   url = url_base + input;
   reset()
   fetch(url)
