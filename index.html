@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Github | Pesquisar Usuários</title>
+  <meta name="description" content="Free Bootstrap Theme by BootstrapMade.com">
+  <meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
+  <link href='https://fonts.googleapis.com/css?family=Lobster|Open+Sans:400,400italic,300italic,300|Raleway:300,400,600' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/animate.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <!-- =======================================================
+    Theme Name: Maundy
+    Theme URL: https://bootstrapmade.com/maundy-free-coming-soon-bootstrap-theme/
+    Author: BootstrapMade.com
+    Author URL: https://bootstrapmade.com
+  ======================================================= -->
+</head>
+
+<body>
+  <div class="content">
+    <div class="container wow fadeInUp delay-03s">
+      <div class="row">
+        <div class="logo text-center">
+          <img src="img/logo.png" alt="logo" width="150">
+          <h2>Bem-vindo ao Projeto Teste GitHub!</h2>
+        </div>
+
+        <!--<div id="countdown" data-wow-delay=".3s" data-date="Dec 26, 2016 06:00:00"></div>-->
+        <h2 class="subs-title text-center">Digite o usuário do GitHub que deseja ver os repositórios: </h2>
+        <div class="subcription-info text-center">
+          <form class="search-form">
+            <input placeholder="Digite o nome do usuário..." id="user-input" type="text">
+            <input type="button" class="search-user" value="Pesquisar" onclick="search()" type="submit" id="search-user">
+          </form>
+          <p class="sub-p">Caso não saiba o nome do usuário, vá até a página do <a href="http://github.com" target="blank" class="sub-a">Github</a>.</p>
+        </div>
+      </div>
+    </div>
+    <section id="about-me" class="section-padding">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 text-center">
+              <div class="about-title">
+                <h2>Sobre mim: </h2>
+                <p>Sou Henrique Ernesto Seganfredo, </br>Desenvolvedor de Software e entusiasta para aprender novas tecnologias.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+    <section>
+      <div class="container">
+        <div class="row bort text-center">
+          <div class="social">
+            <ul>
+              <li>
+                <a href="https://www.facebook.com" target="blank"><i class="fa fa-facebook"></i></a>
+              </li>
+              <li>
+                <a href="https://www.twitter.com" target="blank"><i class="fa fa-twitter"></i></a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/in/henrique-ernesto-seganfredo-266bb2124/" target="blank"><i class="fa fa-linkedin"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="about" class="section-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-sm-12 text-center" id="infos-user" style="display: none;">
+            <div class="about-title" id="about-title">
+              <h2>Resultado: </h2>
+            </div>
+            <img id="avatar" src="http://via.placeholder.com/462x462/B2FFC9?text=Find+a+GitHub+user" class="container-img">
+              <div id="user-box" class="container-box">
+                <div class="titles"><b>Usuário: </b></div>
+                <p id="username"></p>
+              </div>
+              <a class="sub-a" id="html-url" href="" target="_blank">Perfil Github </a>
+              <div id="bio"></div>
+              <div class="buttons-container">
+                  <input type="button" class="button-search" value="Repositórios" onclick="searchRepos()" type="submit" id="search-repo">
+                  <input type="button" class="button-search" value="Favoritos" onclick="searchStarred()" type="submit" id="search-starred">
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12 col-sm-12 text-center" id="infos-user-not-found" style="display: none;">
+              <div class="about-title" id="about-title">
+                <h2>Resultado: </h2>
+              </div>
+                <div id="user-box" class="container-box">
+                  <p id="username-not-found"></p>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="about" class="section-padding">
+        <div class="container">
+          <div class="row">
+            <div id="container-repos" class="container-repos col-md-12 col-sm-12">
+                <div id="repos-box" class="repos-box" style="display: none;">
+                    <h2>Repositórios: </h2>
+                    <div id="repos-response"></div>
+                </div>
+                <div id="starred-box" class="starred-box" style="display: none;">
+                    <h2>Favoritos: </h2>
+                    <div id="starred-response"></div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </section>
+  <footer class="footer">
+    <div class="container">
+      <div class="row bort">
+
+        <div class="copyright">
+          © Copyright Maundy Theme. All rights reserved.
+          <div class="credits">
+            <!--
+              All the links in the footer should remain intact. 
+              You can delete the links only if you purchased the pro version.
+              Licensing information: https://bootstrapmade.com/license/
+              Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Maundy
+            -->
+            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.countdown.min.js"></script>
+  <script src="js/wow.js"></script>
+  <script src="js/custom.js"></script>
+  <script src="js/functions.js"></script>
+  <script src="contactform/contactform.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+</body>
+
+</html>
